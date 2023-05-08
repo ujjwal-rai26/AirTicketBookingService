@@ -7,11 +7,15 @@ const apiRoutes=require('./routes/index');
 
 const db=require('./models/index');
 
+// app.get('/bookingservice/api/v1/home',(req,res)=>{
+//     res.json({message:'hitting the booing service'});
+// })
+
 const setupAndStartServer=()=>{
    app.use(bodyPareser.json());
    app.use(bodyPareser.urlencoded({extended:true}));
 
-   app.use('/api',apiRoutes);
+   app.use('/bookingservice/api',apiRoutes);
 
    app.listen(PORT,()=>{
     console.log(`server start at port ${PORT}`);
